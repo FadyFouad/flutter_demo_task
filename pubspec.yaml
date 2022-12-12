@@ -1,0 +1,44 @@
+name: flutter_demo_task
+description: A task soluttion.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+#   state management, intelligent dependency injection, and route management
+  get: ^4.6.5
+#  for creating animated badges.
+  badges: ^2.0.3
+#  easy-to-use method call debouncer
+  easy_debounce: ^2.0.2+1
+#  play json animations || lottie files
+  lottie: ^2.0.0
+#  show images from the internet and keep them in the cache directory
+  cached_network_image: ^3.2.3
+#  Approximate how your app looks on another device
+  device_preview: ^1.1.0
+#for rendering svg images
+  flutter_svg: ^1.1.6
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+#  auto generate assets
+  build_runner:
+  flutter_gen_runner:
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/search.png
+  #   - images/a_dot_ham.jpeg
+
