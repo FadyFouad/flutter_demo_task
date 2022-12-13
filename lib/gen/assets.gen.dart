@@ -12,11 +12,49 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_heart_border.svg
+  String get icHeartBorder => 'assets/icons/ic_heart_border.svg';
+
+  /// File path: assets/icons/ic_heart_filled.svg
+  String get icHeartFilled => 'assets/icons/ic_heart_filled.svg';
+
+  /// File path: assets/icons/ic_location.svg
+  String get icLocation => 'assets/icons/ic_location.svg';
+
+  /// File path: assets/icons/ic_nav_cart.svg
+  String get icNavCart => 'assets/icons/ic_nav_cart.svg';
+
+  /// File path: assets/icons/ic_nav_favorites.svg
+  String get icNavFavorites => 'assets/icons/ic_nav_favorites.svg';
+
+  /// File path: assets/icons/ic_nav_home.svg
+  String get icNavHome => 'assets/icons/ic_nav_home.svg';
+
+  /// File path: assets/icons/ic_nav_news.svg
+  String get icNavNews => 'assets/icons/ic_nav_news.svg';
+
+  /// File path: assets/icons/ic_nav_wallet.svg
+  String get icNavWallet => 'assets/icons/ic_nav_wallet.svg';
+
+  /// File path: assets/icons/ic_search.svg
+  String get icSearch => 'assets/icons/ic_search.svg';
+
   /// File path: assets/icons/search.png
   AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [search];
+  List<dynamic> get values => [
+        icHeartBorder,
+        icHeartFilled,
+        icLocation,
+        icNavCart,
+        icNavFavorites,
+        icNavHome,
+        icNavNews,
+        icNavWallet,
+        icSearch,
+        search
+      ];
 }
 
 class Assets {
