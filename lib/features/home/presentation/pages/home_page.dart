@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/core/widgets/custom_appbar.dart';
+import 'package:flutter_demo_task/core/widgets/custom_bottom_nav_bar.dart';
+import 'package:flutter_demo_task/gen/assets.gen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 /*
 ╔═══════════════════════════════════════════════════╗
@@ -23,11 +26,6 @@ class _HomePageState extends State<HomePage> {
       appBar: CustomAppBar(userName: ('Mostafa St.'),),
       body:  const Center(
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: [
-      //
-      //   ],
-      // ),
     );
   }
 }

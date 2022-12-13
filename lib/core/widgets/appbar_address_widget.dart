@@ -35,7 +35,7 @@ class AppBarAddressWidget extends StatelessWidget {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(
                 Radius.circular(Dimens.roundedDiagCornerRadius)),
-            color: AppColors.accentColor,
+            color: AppColors.accentLightColor,
           ),
           child: Center(
               child: Row(

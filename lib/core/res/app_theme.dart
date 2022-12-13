@@ -15,7 +15,7 @@ import 'package:flutter_demo_task/gen/fonts.gen.dart';
 ThemeData themeLight = ThemeData(
   fontFamily: FontFamily.poppins,
   primaryColor: AppColors.primaryColor,
-  colorScheme: const ColorScheme.light().copyWith(primary: AppColors.primaryColor,secondary: AppColors.secondaryColor),
+  colorScheme: const ColorScheme.light().copyWith(primary: AppColors.primaryColor,secondary: AppColors.accentColor),
   textTheme: const TextTheme(
     titleMedium: TextStyle(fontSize: 14,color: AppColors.blackColor,fontWeight: FontWeight.w500)
   ),

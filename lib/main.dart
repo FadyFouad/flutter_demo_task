@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/core/res/app_theme.dart';
+import 'package:flutter_demo_task/dashboard.dart';
 import 'package:flutter_demo_task/features/home/presentation/pages/home_page.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: themeLight,
-      home: const HomePage(),
+      home: const DashboardWidget(),
     );
   }
 }
