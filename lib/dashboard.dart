@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/core/res/app_colors.dart';
 import 'package:flutter_demo_task/core/widgets/custom_appbar.dart';
 import 'package:flutter_demo_task/core/widgets/custom_bottom_nav_bar.dart';
+import 'package:flutter_demo_task/features/cart/presentation/controller/cart_controller.dart';
 import 'package:flutter_demo_task/features/cart/presentation/pages/cart_page.dart';
 import 'package:flutter_demo_task/features/home/presentation/pages/home_page.dart';
 import 'package:flutter_demo_task/gen/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 /*
 ╔═══════════════════════════════════════════════════╗
@@ -52,8 +54,8 @@ class _DashboardWidgetState extends State<DashboardWidget> {
           i == 2
               ? null
               : setState(() {
-                  index = i;
-                });
+            index = i;
+          });
         },
         index: index,
       ),
@@ -64,7 +66,13 @@ class _DashboardWidgetState extends State<DashboardWidget> {
             //todo: get price from controller
             Positioned(
               top: 0,
-              child: Text('\$23',style: Theme.of(context).textTheme.bodyMedium?.copyWith(color:AppColors.whiteColor )),
+              child: GetBuilder<CartController>(builder: (logic) {
+                return Text('\$${logic.totalPrice.toInt()}', style: Theme
+                    .of(context)
+                    .textTheme
+                    .titleSmall
+                    ?.copyWith(color: AppColors.whiteColor));
+              }),
             ),
             SvgPicture.asset(Assets.icons.icNavCart, color: Colors.white),
           ],
@@ -72,7 +80,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
         onPressed: () {},
       ),
       floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
+      FloatingActionButtonLocation.miniCenterDocked,
     );
   }
 }

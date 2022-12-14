@@ -8,6 +8,7 @@ import 'package:flutter_demo_task/features/home/presentation/widgets/address_wid
 import 'package:flutter_demo_task/features/home/presentation/widgets/category_widget.dart';
 import 'package:flutter_demo_task/features/home/presentation/widgets/day_deals_widget.dart';
 import 'package:flutter_demo_task/features/home/presentation/widgets/search_text_feild.dart';
+import 'package:flutter_demo_task/gen/assets.gen.dart';
 
 /*
 ╔═══════════════════════════════════════════════════╗
@@ -62,7 +63,9 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
-                  return DealOfTheDay();
+                  return DealOfTheDay(
+                    favIcon: index%2==0?Assets.icons.icHeartBorder:Assets.icons.icHeartFilled,
+                  );
                 }),
           ),
           SizedBox(height: Dimens.space12),

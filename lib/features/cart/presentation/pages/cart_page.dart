@@ -3,6 +3,7 @@ import 'package:flutter_demo_task/config/extentions/context_extentions.dart';
 import 'package:flutter_demo_task/core/res/app_dims.dart';
 import 'package:flutter_demo_task/core/widgets/custom_appbar.dart';
 import 'package:flutter_demo_task/core/widgets/lagre_title_widget.dart';
+import 'package:flutter_demo_task/features/cart/presentation/controller/cart_controller.dart';
 import 'package:flutter_demo_task/features/cart/presentation/widgets/cart_item_widget.dart';
 import 'package:flutter_demo_task/features/home/presentation/widgets/address_widget.dart';
 import 'package:get/get.dart';
@@ -15,17 +16,18 @@ import 'package:get/get.dart';
 ╚═══════════════════════════════════════════════════╝
 */
 
-class CartPage extends StatelessWidget {
+class CartPage extends GetView<CartController> {
   const CartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Get.put(CartController());
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(Dimens.space12),
         child: ListView(
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           children: [
             LargeTitleWidget(title: context.translate.cart),
             SizedBox(
@@ -33,9 +35,24 @@ class CartPage extends StatelessWidget {
               // height: context.height,
               child: ListView.builder(
                   shrinkWrap: true,
-                  itemCount: 10,
+                  itemCount: controller.listCartItem.value.length,
                   itemBuilder: (_, index) {
-                    return CartItemWidget();
+                    return Obx(() {
+                      var listItems =  controller.listCartItem.value;
+                      return CartItemWidget(
+                        item: listItems[index],
+                        /*
+                        onTapAdd: () {
+                          controller.addItemToCart(
+                              listItems[index]);
+                        },
+                        onTapAddRemove: () {
+                          controller.removeItemFromCart(
+                              listItems[index]);
+                        },
+                        count: (listItems[index].count),
+                      */);
+                    });
                   }),
             ),
           ],

@@ -14,5 +14,6 @@ class Assets {
   static const String iconsIcPlus = 'assets/icons/ic_plus.svg';
   static const String iconsIcSearch = 'assets/icons/ic_search.svg';
   static const String iconsSearch = 'assets/icons/search.png';
+  static const String imagesBtnBackrounf = 'assets/images/btn_backrounf.svg';
 
 }

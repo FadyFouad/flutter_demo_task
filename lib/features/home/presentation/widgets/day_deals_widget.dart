@@ -15,8 +15,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 */
 
 class DealOfTheDay extends StatelessWidget {
-  const DealOfTheDay({Key? key}) : super(key: key);
+  const DealOfTheDay({Key? key, required this.favIcon}) : super(key: key);
 
+  final String favIcon;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,14 +30,15 @@ class DealOfTheDay extends StatelessWidget {
               Container(
                 width: context.widthInPercent(25),
                 height: context.widthInPercent(25),
-                decoration: defaultBoxDecoration.copyWith(border: Border.all(color: Colors.transparent)),
+                decoration: defaultBoxDecoration.copyWith(border: Border.all(color: Colors.blue.withOpacity(.2))),
               ),
               Positioned(
                   left: 0,
                   top: -10,
-                  child: SvgPicture.asset(Assets.icons.icHeartBorder)),
+                  child: SvgPicture.asset(favIcon)),
             ],
           ),
+          SizedBox(width: Dimens.space8,),
           Padding(
             padding: EdgeInsets.all(Dimens.defaultPadding),
             child: Column(

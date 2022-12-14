@@ -1,10 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/config/extentions/context_extentions.dart';
 import 'package:flutter_demo_task/config/utils/constants.dart';
 import 'package:flutter_demo_task/core/res/app_colors.dart';
 import 'package:flutter_demo_task/core/res/app_dims.dart';
+import 'package:flutter_demo_task/features/cart/domain/entities/cart_item_model.dart';
+import 'package:flutter_demo_task/features/cart/presentation/controller/cart_controller.dart';
 import 'package:flutter_demo_task/gen/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 /*
 ╔═══════════════════════════════════════════════════╗
@@ -15,7 +19,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 */
 
 class CartItemWidget extends StatelessWidget {
-  const CartItemWidget({Key? key}) : super(key: key);
+  const CartItemWidget(
+      {Key? key, required this.item, /*required this.onTapAdd, required this.onTapAddRemove, required this.count*/
+      }) : super(key: key);
+
+  // final VoidCallback onTapAdd;
+  // final VoidCallback onTapAddRemove;
+  final CartItem item;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +34,12 @@ class CartItemWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          ItemWidget(),
-          CounterWidget(),
+          ItemWidget(item: item,),
+          GetBuilder<CartController>(builder: (logic) {
+            return CounterWidget(
+              item: (item),
+            );
+          }),
         ],
       ),
     );
@@ -33,8 +47,8 @@ class CartItemWidget extends StatelessWidget {
 }
 
 class ItemWidget extends StatelessWidget {
-  const ItemWidget({Key? key}) : super(key: key);
-
+  const ItemWidget({Key? key, required this.item}) : super(key: key);
+final CartItem item;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -44,6 +58,24 @@ class ItemWidget extends StatelessWidget {
           width: context.widthInPercent(15),
           height: context.widthInPercent(15),
           decoration: defaultBoxDecoration,
+          child: CachedNetworkImage(
+            imageUrl: '${item.imageUrl}',
+            imageBuilder: (_,image){
+              return Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(Dimens.cornerRadius),
+                  image: DecorationImage(
+                    image: image,
+                    fit: BoxFit.cover
+                  ),
+                )
+              );
+            },
+            fit: BoxFit.fill,
+            placeholder: (_,__){
+              return CircularProgressIndicator();
+            },
+          ),
         ),
         SizedBox(
           width: Dimens.space12,
@@ -53,12 +85,19 @@ class ItemWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text('Turkish Steak',style: Theme.of(context).textTheme.titleMedium),
+            Text(item.name??'', style: Theme
+                .of(context)
+                .textTheme
+                .titleMedium),
             Padding(
-              padding: EdgeInsets.symmetric(vertical:Dimens.space10),
-              child: Text('173 Grams'),
+              padding: EdgeInsets.symmetric(vertical: Dimens.space10),
+              child: Text(item.quantity??''),
             ),
-            Text('\$ 25',style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.fontRedColor),),
+            Text('\$ ${item.price}', style: Theme
+                .of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(color: AppColors.fontRedColor),),
           ],
         ),
       ],
@@ -67,26 +106,38 @@ class ItemWidget extends StatelessWidget {
 }
 
 class CounterWidget extends StatelessWidget {
-  const CounterWidget({Key? key}) : super(key: key);
+  const CounterWidget({Key? key, required this.item})
+      : super(key: key);
+
+  final CartItem item;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        InkWell(
-          onTap: () {},
-          child: SvgPicture.asset(Assets.icons.icMinus),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: Dimens.space16),
-          child: Text('2',style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 18)),
-        ),
-        InkWell(
-          onTap: () {},
-          child: SvgPicture.asset(Assets.icons.icPlus),
-        ),
-      ],
-    );
+    return GetBuilder<CartController>(builder: (logic) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          InkWell(
+            onTap: (){
+              logic.removeItemFromCart(item);
+            },
+            child: SvgPicture.asset(Assets.icons.icMinus),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Dimens.space16),
+            child: Text('${item.count}', style: Theme
+                .of(context)
+                .textTheme
+                .titleLarge
+                ?.copyWith(fontSize: 18)),
+          ),
+          InkWell(
+            onTap: (){
+              logic.addItemToCart(item);
+            },            child: SvgPicture.asset(Assets.icons.icPlus),
+          ),
+        ],
+      );
+    });
   }
 }
