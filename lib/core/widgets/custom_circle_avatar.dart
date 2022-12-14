@@ -27,7 +27,7 @@ class CustomCircleAvatar extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: AppColors.avatarBorderColor)),
+            border: Border.all(color: AppColors.borderColor)),
         child: CircleAvatar(
           radius: Dimens.appBarAvatarRadius,
           backgroundColor: AppColors.whiteColor,

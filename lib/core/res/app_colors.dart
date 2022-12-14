@@ -68,7 +68,8 @@ class AppColors {
   static const accentLightColor = Color(0xFFEE6A61);
   static const accentColor = Color(0xFFD93E11);
   static const lightGreyColor = Color(0xff707070);
-  static const avatarBorderColor = Color(0xff707070);
+  static const borderColor = Color(0xff707070);
+  static const fillColor = Color(0xffE3DDD6);
   static const blackColor = Color(0xff000000);
   static const whiteColor = Color(0xfff5f5f5);
   static const bottomNavColor = Color(0xffF4F9FA);

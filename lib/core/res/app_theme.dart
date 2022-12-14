@@ -17,7 +17,11 @@ ThemeData themeLight = ThemeData(
   primaryColor: AppColors.primaryColor,
   colorScheme: const ColorScheme.light().copyWith(primary: AppColors.primaryColor,secondary: AppColors.accentColor),
   textTheme: const TextTheme(
-    titleMedium: TextStyle(fontSize: 14,color: AppColors.blackColor,fontWeight: FontWeight.w500)
+    titleLarge:TextStyle(fontSize: 12,color: AppColors.blackColor,fontWeight: FontWeight.w700) ,
+    titleMedium: TextStyle(fontSize: 11,color: AppColors.blackColor,fontWeight: FontWeight.w600),
+    titleSmall: TextStyle(fontSize: 9,color: AppColors.blackColor,fontWeight: FontWeight.w600),
+    bodyMedium: TextStyle(fontSize: 10,color: AppColors.blackColor,fontWeight: FontWeight.w400),
+    bodySmall: TextStyle(fontSize: 10,color: AppColors.blackColor,fontWeight: FontWeight.w300),
   ),
   brightness: Brightness.light,
   iconTheme: const IconThemeData(color: AppColors.primaryColor),

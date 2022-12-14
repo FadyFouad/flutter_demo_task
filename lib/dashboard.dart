@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/core/res/app_colors.dart';
+import 'package:flutter_demo_task/core/widgets/custom_appbar.dart';
 import 'package:flutter_demo_task/core/widgets/custom_bottom_nav_bar.dart';
+import 'package:flutter_demo_task/features/cart/presentation/pages/cart_page.dart';
 import 'package:flutter_demo_task/features/home/presentation/pages/home_page.dart';
 import 'package:flutter_demo_task/gen/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,6 +28,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(
+        userName: ('Mostafa St.'),
+      ),
       body: IndexedStack(
         index: index,
         children: [
@@ -36,8 +41,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
           Container(
             color: Colors.red,
           ),
-          Container(
-            color: Colors.amber,
+          Container(),
+          CartPage(
+
           ),
         ],
       ),
