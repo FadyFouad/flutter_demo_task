@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/core/res/app_theme.dart';
 import 'package:flutter_demo_task/dashboard.dart';
-import 'package:flutter_demo_task/features/home/presentation/pages/home_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -15,9 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales:AppLocalizations.supportedLocales,
       theme: themeLight,
       home: const DashboardWidget(),
     );
   }
 }
-

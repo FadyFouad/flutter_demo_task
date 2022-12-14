@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_task/config/extentions/context_extentions.dart';
 import 'package:flutter_demo_task/core/res/app_colors.dart';
 import 'package:flutter_demo_task/gen/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,24 +35,25 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: _BottomNavIcon(isSelected:  widget.index != 0,svgIconPath: Assets.icons.icNavHome,),
-          label: ('Grocery'),
+          label: (context.translate.grocery),
         ),
         BottomNavigationBarItem(
           icon: _BottomNavIcon(isSelected:  widget.index != 1,svgIconPath: Assets.icons.icNavNews,),
-          label: ('News'),
+          label: (context.translate.news),
         ),
-        BottomNavigationBarItem(
+        //to add more space -> easy solution :)
+        const BottomNavigationBarItem(
           icon:SizedBox(),
           label: (''),
 
         ),
         BottomNavigationBarItem(
           icon: _BottomNavIcon(isSelected:  widget.index != 3,svgIconPath: Assets.icons.icNavFavorites,),
-          label: ('Favorite'),
+          label: (context.translate.favorite),
         ),
         BottomNavigationBarItem(
           icon: _BottomNavIcon(isSelected: widget.index != 4,svgIconPath:Assets.icons.icNavWallet,),
-          label: ('Cart'),
+          label: (context.translate.cart),
         ),
       ],
       currentIndex: widget.index,

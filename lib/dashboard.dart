@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_task/core/res/app_colors.dart';
 import 'package:flutter_demo_task/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter_demo_task/features/home/presentation/pages/home_page.dart';
 import 'package:flutter_demo_task/gen/assets.gen.dart';
@@ -55,10 +56,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
           clipBehavior: Clip.none,
           children: [
             //todo: get price from controller
-            //todo: refactor text style
             Positioned(
               top: 0,
-              child: Text('\$23',style: TextStyle(color: Colors.white,fontSize: 12),),
+              child: Text('\$23',style: Theme.of(context).textTheme.bodyMedium?.copyWith(color:AppColors.whiteColor )),
             ),
             SvgPicture.asset(Assets.icons.icNavCart, color: Colors.white),
           ],
