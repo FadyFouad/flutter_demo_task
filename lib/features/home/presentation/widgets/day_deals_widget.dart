@@ -62,14 +62,14 @@ class DealOfTheDay extends StatelessWidget {
                   ),
                 ),Padding(
                   padding: EdgeInsets.all(Dimens.space2),
-                  child: Text.rich(
+                  child:const Text.rich(
                     TextSpan(
                       children: [
                         TextSpan(
                           text: '\$13 ',
                           style: TextStyle(fontSize:12,letterSpacing:2,fontWeight: FontWeight.bold,color: Colors.red),
                         ),
-                        TextSpan(text: ' 15',style: TextStyle(fontSize:12,letterSpacing:2,decoration: TextDecoration.lineThrough)),
+                         TextSpan(text: ' 15',style: TextStyle(fontSize:12,letterSpacing:2,decoration: TextDecoration.lineThrough,color: AppColors.fontGreyColor)),
                       ],
                     ),
                   ),

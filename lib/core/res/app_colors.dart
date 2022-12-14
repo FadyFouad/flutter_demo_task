@@ -74,10 +74,12 @@ class AppColors {
   static const whiteColor = Color(0xfff5f5f5);
   static const bottomNavColor = Color(0xffF4F9FA);
   static const counterBtnColor = Color(0xffB0EAFD);
+  static const fillTextFeildColor = Color(0xffF5F7F9);
 
 // Font Colors
   static const fontWhiteColor = Color(0xfff5f5f5);
   static const fontRedColor = Color(0xffB13E55);
+  static const fontGreyColor = Color(0xff707070);
   static const fontTitleColor = Color(0xff2D2A26);
   static const fontSubTitleColor = Color(0xff2D2A26);
   static const fontBodyColor = Color(0xff2D2A26);

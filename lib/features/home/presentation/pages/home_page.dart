@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/config/extentions/context_extentions.dart';
 import 'package:flutter_demo_task/core/res/app_dims.dart';
-import 'package:flutter_demo_task/core/widgets/custom_appbar.dart';
 import 'package:flutter_demo_task/core/widgets/lagre_title_widget.dart';
 import 'package:flutter_demo_task/features/home/presentation/widgets/address_widget.dart';
 import 'package:flutter_demo_task/features/home/presentation/widgets/category_widget.dart';
@@ -29,7 +28,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: ListView(
         children: [
           const SearchTextField(),
@@ -37,26 +35,28 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: context.heightInPercent(7),
             child: ListView.builder(
-              shrinkWrap: true,
+                shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
-                  return AddressWidget();
+                  return const AddressWidget();
                 }),
           ),
           SizedBox(height: Dimens.space12),
-          LargeTitleWidget(title: context.translate.exploreByCategory,),
+          LargeTitleWidget(
+            title: context.translate.exploreByCategory,
+          ),
           SizedBox(
             height: context.heightInPercent(13),
             child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
-                  return CategoryWidget(
-
-                  );
+                  return const CategoryWidget();
                 }),
           ),
-          LargeTitleWidget(title: context.translate.dealsOfTheDay,),
+          LargeTitleWidget(
+            title: context.translate.dealsOfTheDay,
+          ),
           SizedBox(
             height: context.heightInPercent(13),
             child: ListView.builder(
@@ -64,21 +64,22 @@ class _HomePageState extends State<HomePage> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
                   return DealOfTheDay(
-                    favIcon: index%2==0?Assets.icons.icHeartBorder:Assets.icons.icHeartFilled,
+                    favIcon: index % 2 == 0
+                        ? Assets.icons.icHeartBorder
+                        : Assets.icons.icHeartFilled,
                   );
                 }),
           ),
           SizedBox(height: Dimens.space12),
-         SizedBox(
+          SizedBox(
             height: context.heightInPercent(12),
             child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
-                  return  _OfferWidget();
+                  return const _OfferWidget();
                 }),
           ),
-
         ],
       ),
     );
@@ -99,10 +100,10 @@ class _OfferWidget extends StatelessWidget {
         height: context.heightInPercent(15),
         decoration: BoxDecoration(
             color: Colors.red,
-            borderRadius: BorderRadius.circular(Dimens.cornerRadius)
-        ),
+            borderRadius: BorderRadius.circular(Dimens.cornerRadius)),
         child: CachedNetworkImage(
-          imageUrl: 'https://i.pinimg.com/originals/0b/c1/94/0bc19452b7a568797c8331be7275e453.png',
+          imageUrl:
+              'https://i.pinimg.com/originals/0b/c1/94/0bc19452b7a568797c8331be7275e453.png',
           // imageBuilder: (context, imageProvider) => Container(
           //   width: context.widthInPercent(80),
           //   decoration: BoxDecoration(
@@ -111,8 +112,9 @@ class _OfferWidget extends StatelessWidget {
           //         fit: BoxFit.cover,),
           //   ),
           // ),
-          placeholder: (context, url) => Center(child: CircularProgressIndicator()),
-          errorWidget: (context, url, error) => Icon(Icons.error),
+          placeholder: (context, url) =>
+              const Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );

@@ -73,7 +73,7 @@ final CartItem item;
             },
             fit: BoxFit.fill,
             placeholder: (_,__){
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             },
           ),
         ),

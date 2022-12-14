@@ -44,7 +44,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
             color: Colors.red,
           ),
           Container(),
-          CartPage(
+          const CartPage(
 
           ),
         ],

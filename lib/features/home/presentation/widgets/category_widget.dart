@@ -24,7 +24,7 @@ class CategoryWidget extends StatelessWidget {
           Container(
               decoration: defaultBoxDecoration.copyWith(color: AppColors.secondaryColor.withOpacity(.7)),
               child: Image.network('https://www.pngmart.com/files/22/Steak-PNG-Pic.png',width: context.widthInPercent(15),height: context.widthInPercent(15),)),
-          Text('steak'),
+          const Text('steak'),
         ],
       ),
     );

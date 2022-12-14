@@ -24,14 +24,17 @@ class SearchTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration: defaultBoxDecoration,
+        decoration: defaultBoxDecoration.copyWith(color: AppColors.fillTextFeildColor),
         child: Padding(
           padding:  EdgeInsets.only(left: Dimens.space12,right: Dimens.defaultPadding),
           child: TextField(
             decoration: InputDecoration(
               hintText: context.translate.searchInThousandsOfProducts,
-              prefixIcon: SvgPicture.asset(Assets.icons.icSearch,height: 24,width: 24,),
-              prefixIconConstraints: BoxConstraints(maxHeight: 36,maxWidth: 36),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SvgPicture.asset(Assets.icons.icSearch,height: Dimens.space24,width: Dimens.space24,),
+              ),
+              prefixIconConstraints: BoxConstraints(maxHeight: Dimens.space36,maxWidth: Dimens.space36),
               contentPadding: EdgeInsets.all(Dimens.defaultPadding),
               border: InputBorder.none,
             ),

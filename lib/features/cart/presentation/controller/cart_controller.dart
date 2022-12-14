@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/features/cart/domain/entities/cart_item_model.dart';
 import 'package:flutter_demo_task/features/cart/presentation/controller/mock_cart_item_data.dart';
 import 'package:get/get.dart';
@@ -13,48 +10,45 @@ import 'package:get/get.dart';
 ╚═══════════════════════════════════════════════════╝
 */
 
-class CartController extends GetxController{
-
+class CartController extends GetxController {
   var listCartItem = List<CartItem>.empty(growable: true).obs;
   var totalPrice = 0.0.obs;
+
   @override
   void onInit() {
+    super.onInit();
     getCartItems();
     getTotalPrice();
   }
 
   @override
-  void onClose() {
-
-  }
+  void onClose() {}
 
   @override
-  void onReady() {
+  void onReady() {}
 
-  }
-
-  getCartItems(){
+  getCartItems() {
     listCartItem.value = List<CartItem>.from((jsonArrayCartItems)['data']
         .map((data) => CartItem.fromJson(data))
         .toList());
   }
 
-  addItemToCart(CartItem item){
+  addItemToCart(CartItem item) {
     item.count++;
     getTotalPrice();
   }
 
-  removeItemFromCart(CartItem item){
-    if(item.count>0){
+  removeItemFromCart(CartItem item) {
+    if (item.count > 0) {
       item.count--;
       getTotalPrice();
     }
   }
 
-  getTotalPrice(){
-    totalPrice.value=0;
+  getTotalPrice() {
+    totalPrice.value = 0;
     listCartItem.value.forEach((element) {
-      totalPrice.value += (element.price*element.count);
+      totalPrice.value += (element.price * element.count);
     });
     update();
   }

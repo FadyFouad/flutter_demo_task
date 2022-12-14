@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_task/config/extentions/context_extentions.dart';
 import 'package:flutter_demo_task/core/res/app_dims.dart';
-import 'package:flutter_demo_task/core/widgets/custom_appbar.dart';
 import 'package:flutter_demo_task/core/widgets/lagre_title_widget.dart';
 import 'package:flutter_demo_task/features/cart/presentation/controller/cart_controller.dart';
 import 'package:flutter_demo_task/features/cart/presentation/widgets/cart_item_widget.dart';
-import 'package:flutter_demo_task/features/home/presentation/widgets/address_widget.dart';
 import 'package:get/get.dart';
 
 /*
@@ -38,7 +36,7 @@ class CartPage extends GetView<CartController> {
                   itemCount: controller.listCartItem.value.length,
                   itemBuilder: (_, index) {
                     return Obx(() {
-                      var listItems =  controller.listCartItem.value;
+                      var listItems = controller.listCartItem.value;
                       return CartItemWidget(
                         item: listItems[index],
                         /*
@@ -51,12 +49,12 @@ class CartPage extends GetView<CartController> {
                               listItems[index]);
                         },
                         count: (listItems[index].count),
-                      */);
+                      */
+                      );
                     });
                   }),
             ),
           ],
-
         ),
       ),
     );

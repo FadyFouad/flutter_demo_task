@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import '../../config/utils/locals.dart' as updateLoc;
+import '../../config/utils/locals.dart' as update_loc;
 
 class AppLocalizationsSetup {
   static const Iterable<Locale> supportedLocales = [
@@ -11,7 +11,7 @@ class AppLocalizationsSetup {
 
   static const Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates =
       [
-      updateLoc.AppLocalizations.delegate,
+      update_loc.AppLocalizations.delegate,
     AppLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 /*
 ╔═══════════════════════════════════════════════════╗
 ║ Created by Fady Fouad on 14/12/2022 at 21:48.     ║
@@ -16,7 +14,13 @@ class CartItem {
   double price;
   int count;
 
-  CartItem({this.id, this.name,this.imageUrl, this.quantity, this.price=0, this.count=0});
+  CartItem(
+      {this.id,
+      this.name,
+      this.imageUrl,
+      this.quantity,
+      this.price = 0,
+      this.count = 0});
 
   Map<String, dynamic> toJson() {
     return {

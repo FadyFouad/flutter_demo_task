@@ -65,10 +65,22 @@ class $AssetsIconsGen {
       ];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/btn_background.png
+  AssetGenImage get btnBackground =>
+      const AssetGenImage('assets/images/btn_background.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [btnBackground];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {
