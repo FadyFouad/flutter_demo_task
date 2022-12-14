@@ -73,9 +73,11 @@ class AppColors {
   static const blackColor = Color(0xff000000);
   static const whiteColor = Color(0xfff5f5f5);
   static const bottomNavColor = Color(0xffF4F9FA);
+  static const counterBtnColor = Color(0xffB0EAFD);
 
 // Font Colors
   static const fontWhiteColor = Color(0xfff5f5f5);
+  static const fontRedColor = Color(0xffB13E55);
   static const fontTitleColor = Color(0xff2D2A26);
   static const fontSubTitleColor = Color(0xff2D2A26);
   static const fontBodyColor = Color(0xff2D2A26);

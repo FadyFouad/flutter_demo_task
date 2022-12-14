@@ -2,24 +2,17 @@
 class Assets {
   Assets._();
 
-  static const String fontsPoppinsBlack = 'assets/fonts/Poppins-Black.ttf';
-  static const String fontsPoppinsBlackItalic = 'assets/fonts/Poppins-BlackItalic.ttf';
-  static const String fontsPoppinsBold = 'assets/fonts/Poppins-Bold.ttf';
-  static const String fontsPoppinsBoldItalic = 'assets/fonts/Poppins-BoldItalic.ttf';
-  static const String fontsPoppinsExtraBold = 'assets/fonts/Poppins-ExtraBold.ttf';
-  static const String fontsPoppinsExtraBoldItalic = 'assets/fonts/Poppins-ExtraBoldItalic.ttf';
-  static const String fontsPoppinsExtraLight = 'assets/fonts/Poppins-ExtraLight.ttf';
-  static const String fontsPoppinsExtraLightItalic = 'assets/fonts/Poppins-ExtraLightItalic.ttf';
-  static const String fontsPoppinsItalic = 'assets/fonts/Poppins-Italic.ttf';
-  static const String fontsPoppinsLight = 'assets/fonts/Poppins-Light.ttf';
-  static const String fontsPoppinsLightItalic = 'assets/fonts/Poppins-LightItalic.ttf';
-  static const String fontsPoppinsMedium = 'assets/fonts/Poppins-Medium.ttf';
-  static const String fontsPoppinsMediumItalic = 'assets/fonts/Poppins-MediumItalic.ttf';
-  static const String fontsPoppinsRegular = 'assets/fonts/Poppins-Regular.ttf';
-  static const String fontsPoppinsSemiBold = 'assets/fonts/Poppins-SemiBold.ttf';
-  static const String fontsPoppinsSemiBoldItalic = 'assets/fonts/Poppins-SemiBoldItalic.ttf';
-  static const String fontsPoppinsThin = 'assets/fonts/Poppins-Thin.ttf';
-  static const String fontsPoppinsThinItalic = 'assets/fonts/Poppins-ThinItalic.ttf';
+  static const String iconsIcHeartBorder = 'assets/icons/ic_heart_border.svg';
+  static const String iconsIcHeartFilled = 'assets/icons/ic_heart_filled.svg';
+  static const String iconsIcLocation = 'assets/icons/ic_location.svg';
+  static const String iconsIcMinus = 'assets/icons/ic_minus.svg';
+  static const String iconsIcNavCart = 'assets/icons/ic_nav_cart.svg';
+  static const String iconsIcNavFavorites = 'assets/icons/ic_nav_favorites.svg';
+  static const String iconsIcNavHome = 'assets/icons/ic_nav_home.svg';
+  static const String iconsIcNavNews = 'assets/icons/ic_nav_news.svg';
+  static const String iconsIcNavWallet = 'assets/icons/ic_nav_wallet.svg';
+  static const String iconsIcPlus = 'assets/icons/ic_plus.svg';
+  static const String iconsIcSearch = 'assets/icons/ic_search.svg';
   static const String iconsSearch = 'assets/icons/search.png';
 
 }

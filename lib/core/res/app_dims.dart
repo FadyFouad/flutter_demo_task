@@ -31,6 +31,7 @@ class Dimens {
   static double space4 = 4;
   static double space6 = 6;
   static double space8 = 8;
+  static double space10 = 10;
   static double space12 = 12;
   static double space16 = 16;
   static double space24 = 24;

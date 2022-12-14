@@ -21,6 +21,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_location.svg
   String get icLocation => 'assets/icons/ic_location.svg';
 
+  /// File path: assets/icons/ic_minus.svg
+  String get icMinus => 'assets/icons/ic_minus.svg';
+
   /// File path: assets/icons/ic_nav_cart.svg
   String get icNavCart => 'assets/icons/ic_nav_cart.svg';
 
@@ -36,6 +39,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_nav_wallet.svg
   String get icNavWallet => 'assets/icons/ic_nav_wallet.svg';
 
+  /// File path: assets/icons/ic_plus.svg
+  String get icPlus => 'assets/icons/ic_plus.svg';
+
   /// File path: assets/icons/ic_search.svg
   String get icSearch => 'assets/icons/ic_search.svg';
 
@@ -47,11 +53,13 @@ class $AssetsIconsGen {
         icHeartBorder,
         icHeartFilled,
         icLocation,
+        icMinus,
         icNavCart,
         icNavFavorites,
         icNavHome,
         icNavNews,
         icNavWallet,
+        icPlus,
         icSearch,
         search
       ];

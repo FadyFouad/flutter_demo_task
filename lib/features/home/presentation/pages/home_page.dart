@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
           ),
           LargeTitleWidget(title: context.translate.dealsOfTheDay,),
           SizedBox(
-            height: context.heightInPercent(12),
+            height: context.heightInPercent(13),
             child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,

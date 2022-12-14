@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_task/config/extentions/context_extentions.dart';
+import 'package:flutter_demo_task/core/res/app_dims.dart';
 import 'package:flutter_demo_task/core/widgets/custom_appbar.dart';
+import 'package:flutter_demo_task/core/widgets/lagre_title_widget.dart';
+import 'package:flutter_demo_task/features/cart/presentation/widgets/cart_item_widget.dart';
+import 'package:flutter_demo_task/features/home/presentation/widgets/address_widget.dart';
+import 'package:get/get.dart';
 
 /*
 ╔═══════════════════════════════════════════════════╗
@@ -15,8 +21,26 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: Padding(
+        padding: EdgeInsets.all(Dimens.space12),
+        child: ListView(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          children: [
+            LargeTitleWidget(title: context.translate.cart),
+            SizedBox(
+              // width: context.width,
+              // height: context.height,
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: 10,
+                  itemBuilder: (_, index) {
+                    return CartItemWidget();
+                  }),
+            ),
+          ],
 
+        ),
       ),
     );
   }
