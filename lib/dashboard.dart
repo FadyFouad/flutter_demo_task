@@ -4,10 +4,12 @@ import 'package:flutter_demo_task/core/widgets/custom_appbar.dart';
 import 'package:flutter_demo_task/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter_demo_task/features/cart/presentation/controller/cart_controller.dart';
 import 'package:flutter_demo_task/features/cart/presentation/pages/cart_page.dart';
+import 'package:flutter_demo_task/features/favorites/presentation/pages/fav_page.dart';
 import 'package:flutter_demo_task/features/home/presentation/pages/home_page.dart';
 import 'package:flutter_demo_task/gen/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 /*
 ╔═══════════════════════════════════════════════════╗
@@ -37,13 +39,17 @@ class _DashboardWidgetState extends State<DashboardWidget> {
         index: index,
         children: [
           const HomePage(),
-          Container(
-            color: Colors.green,
+          Center(
+            child: Container(
+              height:300,
+              color: Colors.transparent,
+              child: Lottie.asset(Assets.anim.inDevAnim),
+              // color: Colors.green,
+            ),
           ),
           Container(
-            color: Colors.red,
           ),
-          Container(),
+          FavoritesPage(),
           const CartPage(
 
           ),

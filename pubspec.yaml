@@ -50,6 +50,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
+    - assets/anim/in_dev_anim.json
     - assets/images/btn_background.png
 
   #   - images/a_dot_ham.jpeg

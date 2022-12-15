@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String animInDevAnim = 'assets/anim/in_dev_anim.json';
   static const String iconsIcHeartBorder = 'assets/icons/ic_heart_border.svg';
   static const String iconsIcHeartFilled = 'assets/icons/ic_heart_filled.svg';
   static const String iconsIcLocation = 'assets/icons/ic_location.svg';
@@ -14,6 +15,7 @@ class Assets {
   static const String iconsIcPlus = 'assets/icons/ic_plus.svg';
   static const String iconsIcSearch = 'assets/icons/ic_search.svg';
   static const String iconsSearch = 'assets/icons/search.png';
+  static const String imagesBtnBackground = 'assets/images/btn_background.png';
   static const String imagesBtnBackrounf = 'assets/images/btn_backrounf.svg';
 
 }
